@@ -9,7 +9,7 @@
 # Merlin
 #
 - set_fact:
-    use_case_ext_src_2: "https://github.com/dynatrace-ace/ace-box-ext-merlin.git"
+    use_case_ext_src_2: "https://{{ extra_vars.githubuser }}:{{ extra_vars.githubtoken }}@github.com/dynatrace-ace/ace-box-ext-merlin.git"
     use_case_ext_name_2: "ace-box-ext-merlin"
     use_case_ext_version_2: "HEAD"
 
