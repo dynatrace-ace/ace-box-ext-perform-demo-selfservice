@@ -31,15 +31,19 @@
     rsync_opts:
       - "--exclude={{ use_case_ext_default_name }}"
 
-- name: Synchronize var override
-  synchronize:
-    src: "/tmp/{{ use_case_ext_name_2 }}/ace-ext.config.yml"
-    dest: "/home/{{ ace_box_user }}/ansible/{{ use_case_ext_name_2 }}.config.yml"
-  ignore_errors: True
+#
+# Var override only contains dashboard creds. Wil be disabled in favor
+# of ace-box-ext-perform-demo-selfservice/ace-ext.config.yml
+#
+# - name: Synchronize var override
+#   synchronize:
+#     src: "/tmp/{{ use_case_ext_name_2 }}/ace-ext.config.yml"
+#     dest: "/home/{{ ace_box_user }}/ansible/{{ use_case_ext_name_2 }}.config.yml"
+#   ignore_errors: True
 
-- name: Source var override
-  include_vars: "/home/{{ ace_box_user }}/ansible/{{ use_case_ext_name_2 }}.config.yml"
-  ignore_errors: True
+# - name: Source var override
+#   include_vars: "/home/{{ ace_box_user }}/ansible/{{ use_case_ext_name_2 }}.config.yml"
+#   ignore_errors: True
 
 - include_role:
     name: "{{ use_case_ext_name_2 }}"
